@@ -1,4 +1,5 @@
 #!/bin/bash
+APP_PATH=$OPENSHIFT_REPO_DIR/${APP_DIR}
 
 if [ ! -f "${OPENSHIFT_REPO_DIR}/${APP_DIR}" ]; then
   echo "Git cloning from ${APP_GIT}"
@@ -6,6 +7,9 @@ if [ ! -f "${OPENSHIFT_REPO_DIR}/${APP_DIR}" ]; then
   git clone --quiet ${APP_GIT} ${APP_DIR}
 else
   echo "Git pulling"
-  cd ${OPENSHIFT_REPO_DIR}/${APP_DIR}
+  cd $APP_PATH
   git pull --quiet
 fi
+
+cd $APP_PATH
+$COMPOSER_DIR/composer install
