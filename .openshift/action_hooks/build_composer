@@ -1,4 +1,4 @@
-  #!/usr/bin/env bash
+  #!/usr/bin/bash
 
 COMPOSER_DIR="$OPENSHIFT_DATA_DIR/bin"
 

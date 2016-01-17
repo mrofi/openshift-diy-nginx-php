@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env php
 COMPOSER_DIR="$OPENSHIFT_DATA_DIR/bin"
 APP_PATH=$OPENSHIFT_REPO_DIR/${APP_DIR}
 
@@ -15,7 +15,7 @@ fi
 cd $APP_PATH
 
 if [ ! -f "${APP_PATH}/vendor" ]; then
-  /usr/bin/php $COMPOSER_DIR/composer.phar install
+  php $COMPOSER_DIR/composer.phar install
 else
-  /usr/bin/php $COMPOSER_DIR/composer.phar update
+  php $COMPOSER_DIR/composer.phar update
 fi
