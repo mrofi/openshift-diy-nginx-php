@@ -18,4 +18,4 @@ then
     install_composer
 fi
 
-$COMPOSER_DIR/composer self-update
+php $COMPOSER_DIR/composer.phar self-update

@@ -12,4 +12,4 @@ else
 fi
 
 cd $APP_PATH
-$COMPOSER_DIR/composer install
+php $COMPOSER_DIR/composer.phar install
