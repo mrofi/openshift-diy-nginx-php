@@ -32,5 +32,6 @@ cp ${TEMPLATE_DIR}/bash_profile.tmpl ${bash_profile}
 APP_DIR='livecommerce'
 APP_GIT='git://github.com/mrofi/liveCMS.git'
 
+php -v
 # GIT APP
-source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/deploy_app
+# source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/deploy_app
