@@ -26,3 +26,4 @@ fi
 $PHP_BIN/php artisan clear-compiled
 $PHP_BIN/php artisan optimize
 $PHP_BIN/php artisan key:generate
+$PHP_BIN/php artisan migrate --seed
