@@ -15,8 +15,6 @@ fi
 
 cd $APP_PATH
 
-cp .env.openshift.example .env
-
 if [ ! -f "${APP_PATH}/vendor" ]; then
   $PHP_BIN/php $COMPOSER_DIR/composer.phar install
 else
