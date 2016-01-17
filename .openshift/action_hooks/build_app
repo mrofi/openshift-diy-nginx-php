@@ -23,4 +23,6 @@ else
   $PHP_BIN/php $COMPOSER_DIR/composer.phar update
 fi
 
+$PHP_BIN/php artisan clear-compiled
+$PHP_BIN/php artisan optimize
 $PHP_BIN/php artisan key:generate
