@@ -1,5 +1,4 @@
 #!/bin/bash
-COMPOSER_DIR="$OPENSHIFT_DATA_DIR/bin"
 APP_PATH=$OPENSHIFT_REPO_DIR/${APP_DIR}
 
 if [ ! -f "${APP_PATH}" ]; then
@@ -10,12 +9,4 @@ else
   echo "Git pulling"
   cd $APP_PATH
   git pull --quiet
-fi
-
-cd $APP_PATH
-
-if [ ! -f "${APP_PATH}/vendor" ]; then
-  php $COMPOSER_DIR/composer.phar install
-else
-  php $COMPOSER_DIR/composer.phar update
 fi
