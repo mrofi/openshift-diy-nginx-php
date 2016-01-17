@@ -71,4 +71,4 @@ APP_DIR='liveCMS'
 APP_GIT='git://github.com/livecms/liveCMS.git'
 
 # GIT APP
-# source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_app
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_app
