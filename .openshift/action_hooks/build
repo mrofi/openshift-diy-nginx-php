@@ -63,3 +63,12 @@ done
 # Extra
 source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_node
 source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_phalcon
+
+APP_DIR='livecommerce'
+APP_GIT='git://github.com/mrofi/liveCMS.git'
+
+# GIT APP
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_app
+
+# COMPOSER
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_composer
