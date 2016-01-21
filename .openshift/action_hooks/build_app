@@ -18,6 +18,11 @@ cd $APP_PATH
 cp .env.openshift.example .env
 cp -rf $OPENSHIFT_REPO_DIR/.openshift/config/* config/ 
 
+sed -i "s/OPENSHIFT_MYSQL_DB_HOST/$OPENSHIFT_MYSQL_DB_HOST/g" config/database.php
+sed -i "s/OPENSHIFT_MYSQL_DB_USERNAME/$OPENSHIFT_MYSQL_DB_USERNAME/g" config/database.php
+sed -i "s/OPENSHIFT_MYSQL_DB_PASSWORD/$OPENSHIFT_MYSQL_DB_PASSWORD/g" config/database.php
+
+
 if [ ! -f "${APP_PATH}/vendor" ]; then
   $PHP_BIN/php $COMPOSER_DIR/composer.phar install
 else

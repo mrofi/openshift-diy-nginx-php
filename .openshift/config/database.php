@@ -54,10 +54,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST')),
+            'host'      => env('DB_HOST', 'OPENSHIFT_MYSQL_DB_USERNAME'),
             'database'  => env('DB_DATABASE', 'livecms'),
-            'username'  => env('DB_USERNAME', getenv('OPENSHIFT_MYSQL_DB_USERNAME')),
-            'password'  => env('DB_PASSWORD', getenv('OPENSHIFT_MYSQL_DB_PASSWORD')),
+            'username'  => env('DB_USERNAME', 'OPENSHIFT_MYSQL_DB_USERNAME'),
+            'password'  => env('DB_PASSWORD', 'OPENSHIFT_MYSQL_DB_PASSWORD'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
