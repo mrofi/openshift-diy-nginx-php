@@ -13,6 +13,7 @@ ${OPENSHIFT_RUNTIME_DIR}/nginx/sbin/nginx
 echo "Starting php-fpm."
 ${OPENSHIFT_RUNTIME_DIR}/php5/sbin/php-fpm
 
+APP_DIR="liveCMS"
 PHP_BIN="$OPENSHIFT_DIY_DIR/runtime/php5/bin"
 APP_PATH=$OPENSHIFT_REPO_DIR/${APP_DIR}
 
@@ -21,4 +22,4 @@ cd $APP_PATH
 $PHP_BIN/php artisan clear-compiled
 $PHP_BIN/php artisan optimize
 $PHP_BIN/php artisan key:generate
-$PHP_BIN/php artisan migrate --seed --force
+$PHP_BIN/php artisan migrate --seed --force	
