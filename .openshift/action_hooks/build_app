@@ -18,7 +18,7 @@ cd $APP_PATH
 cp .env.openshift.example .env
 
 if [ ! -f "${OPENSHIFT_DATA_DIR}/${APP_PATH}/config" ]; then
-  mkdir $OPENSHIFT_DATA_DIR/$APP_PATH/config
+  mkdir -p $OPENSHIFT_DATA_DIR/$APP_PATH/config
   cp -rf $OPENSHIFT_REPO_DIR/.openshift/config/* $OPENSHIFT_DATA_DIR/$APP_PATH/config/ 
 fi
 
