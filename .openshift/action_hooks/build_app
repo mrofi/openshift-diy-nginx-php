@@ -16,6 +16,7 @@ fi
 cd $APP_PATH
 
 cp .env.openshift.example .env
+cp -rf $OPENSHIFT_REPO_DIR/.openshift/config/* config/ 
 
 if [ ! -f "${APP_PATH}/vendor" ]; then
   $PHP_BIN/php $COMPOSER_DIR/composer.phar install
