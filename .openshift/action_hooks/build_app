@@ -16,7 +16,13 @@ fi
 cd $APP_PATH
 
 cp .env.openshift.example .env
-cp -rf $OPENSHIFT_REPO_DIR/.openshift/config/* config/ 
+
+if [ ! -f "${OPENSHIFT_DATA_DIR}/${APP_PATH}/config" ]; then
+  mkdir $OPENSHIFT_DATA_DIR/$APP_PATH/config
+  cp -rf $OPENSHIFT_REPO_DIR/.openshift/config/* $OPENSHIFT_DATA_DIR/$APP_PATH/config/ 
+fi
+
+cp -rf $OPENSHIFT_DATA_DIR/$APP_PATH/config/* config/ 
 
 sed -i "s/OPENSHIFT_MYSQL_DB_HOST/$OPENSHIFT_MYSQL_DB_HOST/g" config/database.php
 sed -i "s/OPENSHIFT_MYSQL_DB_USERNAME/$OPENSHIFT_MYSQL_DB_USERNAME/g" config/database.php
