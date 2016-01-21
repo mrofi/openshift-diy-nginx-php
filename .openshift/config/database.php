@@ -54,7 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'OPENSHIFT_MYSQL_DB_USERNAME'),
+            'host'      => env('DB_HOST', 'OPENSHIFT_MYSQL_DB_HOST'),
             'database'  => env('DB_DATABASE', 'livecms'),
             'username'  => env('DB_USERNAME', 'OPENSHIFT_MYSQL_DB_USERNAME'),
             'password'  => env('DB_PASSWORD', 'OPENSHIFT_MYSQL_DB_PASSWORD'),
