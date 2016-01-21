@@ -29,14 +29,3 @@ else
   $PHP_BIN/php $COMPOSER_DIR/composer.phar update
 fi
 
-$PHP_BIN/php artisan clear-compiled
-$PHP_BIN/php artisan optimize
-$PHP_BIN/php artisan key:generate
-$PHP_BIN/php artisan migrate --seed --force
-
-echo $OPENSHIFT_MYSQL_DB_HOST;
-echo $OPENSHIFT_MYSQL_DB_USERNAME;
-echo $OPENSHIFT_MYSQL_DB_PASSWORD;
-echo $DB_HOST;
-echo $DB_USERNAME;
-echo $DB_PASSWORD;
