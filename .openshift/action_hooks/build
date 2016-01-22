@@ -15,14 +15,14 @@ source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/common
 # Configure versions
 NGINX_VERSION='1.7.10'
 ZLIB_VERSION='1.2.8'
-PCRE_VERSION='8.37'
+PCRE_VERSION='8.38'
 
 PHP_VERSION='5.6.6'
 ICU_VERSION='54.1'
 
 LIBMCRYPT_VERSION='2.5.8'
 LIBTOOL_VERSION='2.4.6'
-RE2C_VERSION='0.15.3'
+RE2C_VERSION='0.14.3'
 BISON_VERSION='2.7.1'
 
 # Uncomment the following install it.
@@ -66,9 +66,6 @@ source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_phalcon
 
 # COMPOSER
 source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_composer
-
-APP_DIR="liveCMS"
-APP_GIT="git://github.com/livecms/liveCMS.git"
 
 # GIT APP
 source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_app

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-cp $OPENSHIFT_REPO_DIR/.openshift/.myenv $OPENSHIFT_DATA_DIR
-
-source ${OPENSHIFT_DATA_DIR}/.myenv

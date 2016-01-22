@@ -1,0 +1,6 @@
+#!/usr/bin/
+
+
+APP_DIR="app"
+APP_DB_NAME="livecms"
+APP_GIT="git://github.com/livecms/liveCMS.git"

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/config
+
+PHP_BIN="$OPENSHIFT_DIY_DIR/runtime/php5/bin"
+APP_PATH=$OPENSHIFT_REPO_DIR/${APP_DIR}
+
+cd $APP_PATH
+
+mysql -u $OPENSHIFT_MYSQL_DB_USERNAME --password $OPENSHIFT_MYSQL_DB_PASSWORD -e "CREATE DATABASE ${APP_DB_NAME};"
+
+$PHP_BIN/php artisan clear-compiled
+$PHP_BIN/php artisan optimize
+$PHP_BIN/php artisan key:generate
+$PHP_BIN/php artisan migrate --seed --force	

@@ -1,4 +1,7 @@
 #!/usr/bin/env php
+
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/config
+
 PHP_BIN="$OPENSHIFT_DIY_DIR/runtime/php5/bin"
 COMPOSER_DIR="$OPENSHIFT_DATA_DIR/bin"
 APP_PATH=$OPENSHIFT_REPO_DIR/${APP_DIR}
@@ -25,6 +28,7 @@ fi
 cp -rf $OPENSHIFT_DATA_DIR/$APP_DIR/config/* config/ 
 
 sed -i "s/OPENSHIFT_MYSQL_DB_HOST/$OPENSHIFT_MYSQL_DB_HOST/g" config/database.php
+sed -i "s/OPENSHIFT_MYSQL_DB_NAME/${APP_DB_NAME}/g" config/database.php
 sed -i "s/OPENSHIFT_MYSQL_DB_USERNAME/$OPENSHIFT_MYSQL_DB_USERNAME/g" config/database.php
 sed -i "s/OPENSHIFT_MYSQL_DB_PASSWORD/$OPENSHIFT_MYSQL_DB_PASSWORD/g" config/database.php
 
