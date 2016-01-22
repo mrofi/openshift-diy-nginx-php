@@ -1,0 +1,41 @@
+#!/usr/bin/env php
+
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/config
+
+PHP_BIN="$OPENSHIFT_DIY_DIR/runtime/php5/bin"
+COMPOSER_DIR="$OPENSHIFT_DATA_DIR/bin"
+APP_PATH=$OPENSHIFT_REPO_DIR/${APP_DIR}
+
+if [ ! -f "${APP_PATH}" ]; then
+  echo "Git cloning from ${APP_GIT}"
+  cd $OPENSHIFT_REPO_DIR
+  git clone --quiet ${APP_GIT} ${APP_DIR}
+else
+  echo "Git pulling"
+  cd $APP_PATH
+  git pull --quiet
+fi
+
+cd $APP_PATH
+
+cp .env.openshift.example .env
+
+if [ ! -f "${OPENSHIFT_DATA_DIR}/${APP_DIR}/config" ]; then
+  mkdir -p $OPENSHIFT_DATA_DIR/$APP_DIR/config
+  cp -rf $OPENSHIFT_REPO_DIR/.openshift/config/* $OPENSHIFT_DATA_DIR/$APP_DIR/config/ 
+fi
+
+cp -rf $OPENSHIFT_DATA_DIR/$APP_DIR/config/* config/ 
+
+sed -i "s/OPENSHIFT_MYSQL_DB_HOST/$OPENSHIFT_MYSQL_DB_HOST/g" config/database.php
+sed -i "s/OPENSHIFT_MYSQL_DB_NAME/${APP_DB_NAME}/g" config/database.php
+sed -i "s/OPENSHIFT_MYSQL_DB_USERNAME/$OPENSHIFT_MYSQL_DB_USERNAME/g" config/database.php
+sed -i "s/OPENSHIFT_MYSQL_DB_PASSWORD/$OPENSHIFT_MYSQL_DB_PASSWORD/g" config/database.php
+
+
+if [ ! -f "${APP_PATH}/vendor" ]; then
+  $PHP_BIN/php $COMPOSER_DIR/composer.phar install
+else
+  $PHP_BIN/php $COMPOSER_DIR/composer.phar update
+fi
+

@@ -63,3 +63,9 @@ done
 # Extra
 source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_node
 source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_phalcon
+
+# COMPOSER
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_composer
+
+# GIT APP
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/build_app

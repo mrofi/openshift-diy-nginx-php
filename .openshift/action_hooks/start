@@ -12,3 +12,6 @@ ${OPENSHIFT_RUNTIME_DIR}/nginx/sbin/nginx
 
 echo "Starting php-fpm."
 ${OPENSHIFT_RUNTIME_DIR}/php5/sbin/php-fpm
+
+# start app
+source ${OPENSHIFT_REPO_DIR}/.openshift/action_hooks/start_app
