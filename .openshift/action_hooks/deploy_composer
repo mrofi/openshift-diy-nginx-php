@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-PHP_BIN="$OPENSHIFT_DIY_DIR/runtime/php5/bin"
 COMPOSER_DIR="$OPENSHIFT_DATA_DIR/bin"
 
 function install_composer() {
