@@ -10,7 +10,7 @@ function install_composer() {
         mkdir -p $COMPOSER_DIR
     fi
 
-    curl -s https://getcomposer.org/installer | php -- --install-dir=$COMPOSER_DIR
+    curl -s https://getcomposer.org/installer | php --install-dir=$COMPOSER_DIR
 }
 
 if [ ! -x "$COMPOSER_DIR/composer" ]
