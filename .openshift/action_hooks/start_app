@@ -12,4 +12,4 @@ mysql -h $OPENSHIFT_MYSQL_DB_HOST -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_M
 $PHP_BIN/php artisan clear-compiled
 $PHP_BIN/php artisan optimize
 $PHP_BIN/php artisan key:generate
-$PHP_BIN/php artisan migrate --seed --force	
+#$PHP_BIN/php artisan migrate --seed --force	
