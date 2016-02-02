@@ -2,5 +2,5 @@
 
 
 APP_DIR="app"
-APP_DB_NAME="livecms"
-APP_GIT="git://github.com/livecms/liveCMS.git"
+APP_DB_NAME="livecommerce"
+APP_GIT="https://mrofi@bitbucket.org/mrofi/jeans.git"
